@@ -7,12 +7,12 @@ class NoteModel extends BaseModel
     public $table = "note";
 
 
-//    public function getAll($id)
-//    {
-//        $sql = "SELECT * FROM note join note_type as notetype on note.type_id = notetype.id where note.id=$id";
-//        $stmt = $this->connect->query($sql);
-//        return $stmt->fetchAll(\PDO::FETCH_OBJ);
-//    }
+    public function getAll()
+    {
+        $sql = "SELECT * FROM note join note_type on note.type_id = note_type.id";
+        $stmt = $this->connect->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
 
 
     public function create($note)

@@ -16,3 +16,7 @@ create table note(
                      type_id int,
                      foreign key (type_id) references note_type(id)
 );
+
+drop table note_type;
+drop table note;
+
